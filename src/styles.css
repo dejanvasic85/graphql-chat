@@ -6,8 +6,10 @@
   align-items: center;
 }
 .bubble {
+  color: #fff;
+  font-weight: bold;
   background-color: red;
-  padding: 12px;
+  padding: 6px 12px;
   border-radius: 32px;
   margin-right: 12px;
 }

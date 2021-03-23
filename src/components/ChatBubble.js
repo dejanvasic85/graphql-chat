@@ -1,3 +1,7 @@
+/**
+ * This component displays the chat bubble (separate from the real chat)
+ */
+
 import React, { useState } from "react";
 import "../styles.css";
 import { useChat } from "../useChat/useChat";
@@ -7,7 +11,7 @@ export default function ChatBubble() {
   const { messages, loading } = useChat();
 
   if (loading) {
-    return <div>loading...</div>;
+    return <div>loading bubble...</div>;
   }
 
   const unreadMsgCount = messages.filter(
@@ -25,13 +29,6 @@ export default function ChatBubble() {
           Last Check <span>{lastCheck.toISOString()}</span>
         </div>
       </div>
-      <ul>
-        {messages.map((m) => (
-          <li key={m.id}>
-            {m.createdAt}: {m.message}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

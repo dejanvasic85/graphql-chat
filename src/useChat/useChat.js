@@ -1,3 +1,9 @@
+/**
+ * This is the global Chat Provider that just runs in the background
+ * and feeds the data down to the components that subscribe to use.
+ * See Chat.js and ChatBubble.js
+ */
+
 import React, { createContext, useContext, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 
@@ -10,7 +16,7 @@ export const ChatProvider = ({ children }) => {
   const { data, loading, subscribeToMore } = useQuery(CHAT_ROOM, {
     variables: {
       chatRoomId,
-      first: 1,
+      first: 10,
       after: null
     }
   });
