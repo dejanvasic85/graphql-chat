@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { CHAT_ROOM, COMMENTS_SUBSCRIPTION } from "../queries";
 import { chatRoomId } from "../data";
 
-export const ChatContext = createContext({ messages: [] });
+export const ChatContext = createContext({ messages: [], loading: true });
 
 export const ChatProvider = ({ children }) => {
   const { data, loading, subscribeToMore } = useQuery(CHAT_ROOM, {
@@ -47,7 +47,12 @@ export const ChatProvider = ({ children }) => {
   }, [subscribeToMore]);
 
   return (
-    <ChatContext.Provider value={{ messages: data.chatRoom.messages.items }}>
+    <ChatContext.Provider
+      value={{
+        messages: data?.chatRoom?.messages?.items,
+        loading
+      }}
+    >
       {children}
     </ChatContext.Provider>
   );
