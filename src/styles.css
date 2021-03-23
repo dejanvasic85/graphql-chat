@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+}
+.container {
+  display: flex;
+  align-items: center;
+}
+.bubble {
+  background-color: red;
+  padding: 12px;
+  border-radius: 32px;
+  margin-right: 12px;
+}
+.btn {
+  margin-right: 12px;
+}
