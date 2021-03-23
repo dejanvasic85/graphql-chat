@@ -1,14 +1,17 @@
 import React from "react";
 import "./styles.css";
 
-import ChatBubble from "./ChatBubble";
+import { ChatProvider } from "./useChat/useChat";
+import ChatBubble from "./components/ChatBubble";
 
 export default function App() {
   return (
-    <div className="App">
-      <div>
-        Unread messages: <ChatBubble />
+    <ChatProvider>
+      <div className="App">
+        <div>
+          Unread messages: <ChatBubble />
+        </div>
       </div>
-    </div>
+    </ChatProvider>
   );
 }
